@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Formluarz kontaktowy</h3> <br><br><br>
+    Imię: <input type="text" name="imie" id="imie"><br>
+    Nazwisko: <input type="text" name="nazwisko" id="nazwisko"><br>
+    E-mail: <input type="text" name="email" id="email"><br>
+    Usługa: <select name="usluga" id="usluga">
+        <option value="naprawa komputera">naprawa komputera</option>
+        <option value="czyszczenie komputera">czyszczenie komputera</option>
+        <option value="instalacja systemu operacyjnego">instalacja systemu operacyjnego</option>
+        <option value="wymiana dysku twardego">wymiana dysku twardego</option>
+        <option value="instalacja oprogramowania">instalacjaoprogramowania</option>
+        <option value="aktualizacja bios">aktualizacja bios</option>
+        <option value="aktualizacja sterownikow">aktualizacjasterownikow</option>
+        <option value="zalozenie napedu cd">zalozenie napedu cd</option>
+        <option value="wymiana obudowy">wymiana obudowy</option>
+        <option value="odwirusowanie">odwirusowanie</option>
+    </select>
+    <br>
+    <input type="checkbox" name="kopia" id="kopia"> Wyślij kopię wiadomości<br>
+    <button id="btn1" type="submit" onclick="czysc()">Resetuj</button>
+    <button id="btn2" type="submit" onclick="przeslij()">Prześlij</button>
+    <br><br>
+    <div id="wynik"></div>
+
+
+    <script>
+        let napis = "";
+        function przeslij() {
+            let imie = document.getElementById('imie').value;
+            let nazwisko = document.getElementById('nazwisko').value;
+            let email = document.getElementById('email').value;
+            let usluga = document.getElementById('usluga').value;
+
+            document.getElementById("wynik").innerHTML = imie + " " + nazwisko + "<br>" + email.toLowerCase() + "<br>" + "Usługa: " + usluga;
+        }
+        function czysc() {
+            document.getElementById('imie').value = "";
+            document.getElementById('nazwisko').value = "";
+            document.getElementById('email').value = "";
+            document.getElementById('usluga').value = "naprawa komputera";
+            document.getElementById('wynik').innerHTML = "";
+            document.getElementById('kopia').checked = false;
+        }
+    </script>
+</body>
+
+</html>
