@@ -1,0 +1,27 @@
+body {
+    background-color: rgb(154, 244, 203);
+}
+
+input,
+select {
+    float: inline-end;
+}
+
+form {
+    width: 280px;
+    height: auto;
+}
+
+p:last-child,
+#kopia {
+    text-align: center;
+    float: none;
+}
+
+#btn1 {
+    background-color: red;
+}
+
+#btn2 {
+    background-color: green;
+}
