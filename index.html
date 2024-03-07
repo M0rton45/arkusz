@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arkusze</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Formularz kontaktowy</h1>
+    <div class="form">
+            Imię:
+            <input type="text" name="imie" class="dane" id="imie">
+        <p>
+            Nazwisko:
+            <input type="text" name="nazwisko" class="dane" id="nazwisko">
+        </p>
+        <p>
+            E-mail:
+            <input type="text" name="email" class="dane" id="email">
+        </p>
+        <p>
+            Usługa:
+                <select name="usluga" id="usluga" class="dane">
+            <option value="Czyszczenie komputera">Czyszczenie komputera</option>
+            <option value="Wymiana pasty procesora">Wymiana pasty procesora</option>
+            <option value="Podkręcanie podzespołów">Podkręcanie podzespołów</option>
+            <option value="Test wydajności">Test wydajności</option>
+            <option value="Dobranie podzespołów">Dobranie podzespołów</option>
+            <option value="Skompletowanie komputera">Skompletowanie komputera</option>
+            <option value="Złożenie komputera">Złożenie komputera</option>
+            <option value="Wymiana podzespołu">Wymiana podzespołu</option>
+            <option value="Instalacja systemu">Instalacja systemu</option>
+            <option value="Odzyskiwanie danych z dysków">Odzyskiwanie danych z dysków</option>
+                </select>
+        </p>
+        <label>
+            <input type="checkbox" name="kopia" id="kopia">Wyślij kopię wiadomości<br>
+            <input type="button" value="Resetuj" id="reset" onclick="rest()">
+            <input type="submit" id="przeslij" onclick="send()"><br>
+        </label>
+        </div> 
+    
+        <div id="wynik"></div>
+
+    <script>
+        var imie=document.getElementById('imie');
+        var nazwisko=document.getElementById('nazwisko');
+        var email=document.getElementById('email');
+        var usluga=document.getElementById('usluga');
+        var check=document.getElementById('kopia');
+        console.log(imie,nazwisko,email,usluga,check);
+        console.log(email.value.indexOf('.'));
+
+
+        function send(){
+            if(imie.value.length<=0) alert ("Wprowadz imię");
+            if(nazwisko.value.length<=0) alert ("Wprowadz nazwisko");
+            if(email.value.length<=0) alert ("Wprowadz email");
+            else if(email.value.indexOf("@")>=1 && email.value.indexOf('.')>=3) {
+                document.getElementById('wynik').innerHTML=imie.value+' '+nazwisko.value+'<br>'+email.value.toLowerCase()+'<br>Usługa: '+usluga.value;
+                console.log(email.value.length);
+                }
+                else alert("Wprowadz email poprawnie");
+            }
+
+         function rest(){
+            imie.value='';
+            nazwisko.value='';
+            email.value='';
+            usluga.value='Czyszczenie komputera';
+            check.checked=false;
+        }
+    </script>
+    <!-- 
+    10 pozycji uslug select 
+    reset czyści zaznaczenie
+    wyslij kopie nic nie robi 1 z listy usług sie wyświetla domyślnie
+    email na małe litery
+
+    usuługa: wybrana opcja
+    -->
+
+</body>
+</html>

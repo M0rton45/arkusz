@@ -1,27 +1,23 @@
-body {
-    background-color: rgb(154, 244, 203);
+body{
+    background-color: rgb(145, 244, 203);
 }
-
-input,
-select {
-    float: inline-end;
-}
-
-form {
-    width: 280px;
-    height: auto;
-}
-
-p:last-child,
-#kopia {
-    text-align: center;
-    float: none;
-}
-
-#btn1 {
+#reset{
     background-color: red;
 }
-
-#btn2 {
+#przeslij{
     background-color: green;
+}
+.form{
+    width: 280px;
+}
+.dane{
+    width: auto;
+float: inline-end;
+}
+label{
+    float: inline-end;
+    margin: 0px;
+}
+#wynik{
+    clear: both;
 }
